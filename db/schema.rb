@@ -11,23 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217185924) do
+ActiveRecord::Schema.define(version: 20141219182831) do
 
   create_table "bookmarks", force: true do |t|
-    t.text     "url"
-    t.integer  "topic_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "bookmarks", ["topic_id"], name: "index_bookmarks_on_topic_id"
-
-  create_table "topics", force: true do |t|
     t.string   "title"
-    t.boolean  "public",     default: true
+    t.string   "url"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
