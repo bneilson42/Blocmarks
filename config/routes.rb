@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :bookmarks
+  resources :users, only: [:update, :show]
 
   root to: 'welcome#index'
 
