@@ -1,9 +1,10 @@
 <center>
   <% if current_user %>
+<div class"container">
   <h1>All Bookmarks</h1>
-
+</div>
   <% else %>
-  <div class="jumbotron center">
+  <div class="jumbotron">
     <h1>Blocmarks</h1>
     <p>Link URLs and create your own bookmarks.</p>
     <%= link_to "Sign Up", new_user_registration_path, class:'btn btn-primary btn-large' %> Or
