@@ -11,6 +11,9 @@
     <ul>
       <ul class="nav nav-tabs">
       <li><%= link_to "Blocmarks", root_path %></li>
+      <% if current_user %>
+      <li><%= link_to "My Bookmarks", bookmarks_path %></li>
+      <% end %>
 
       <div class="pull-right user-info">
         <% if current_user %>
