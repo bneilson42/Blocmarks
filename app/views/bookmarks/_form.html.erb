@@ -1,0 +1,6 @@
+  <div class="form-group">
+    <%= form_for @bookmark do |f| %>
+    <%= f.text_field :url, class: 'form-control', placeholder: 'Add Url' %>
+    <p> <%= f.submit 'Save', class: 'btn btn-info' %> </p>
+    <% end %>
+  </div>

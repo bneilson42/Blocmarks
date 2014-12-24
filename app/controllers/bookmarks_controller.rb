@@ -31,6 +31,17 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def create
+    @bookmark = current_user.bookmarks.build(bookmark_params)
+    if @bookmark.save
+      flash[:notice] = "Bookmark created!"
+      redirect_to @bookmark
+    else
+      flash[:error] = "There was an error saving the bookmark. Please try again."
+      render :new
+    end
+  end
+
 
   private
     def bookmark_params
