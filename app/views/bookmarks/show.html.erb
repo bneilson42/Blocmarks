@@ -1,2 +1,13 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><%= @bookmark.url %></div>
+      <div class="panel-body">
+        <%= link_to image_tag("box_placeholder.jpg", class: "img-responsive center-block"), @bookmark.url %>
+        <hr/>
+        Created by: <%= @bookmark.user.email %><br/>
+        Created <%= time_ago_in_words(@bookmark.created_at) %> ago
+      </div>
+    </div>
+  </div>
+</div>
